@@ -1,41 +1,36 @@
-import java.util.Scanner;
-
 public class Account {
 
-	private double money;
-	public final String name;
+	private double balance;
 	
-	public void credit(double saveMoney) // 계좌에 돈을 넣음 
+	public void credit(double balance) // 계좌에 돈을 넣음 
 	{
-		money = money + saveMoney;
+		this.balance = this.balance + balance;
 	}
 	
-	public void debit(double useMoney) // 계좌로부터 돈을 뺌
+	public String debit(double balance) // 계좌로부터 돈을 뺌
 	{		
-		money = money - useMoney;
-		if(money<0)
+		if(this.balance - balance<0)
 		{
-			System.out.printf("%s is Empty \n",name);
+			System.out.print("subtracting "+balance+" from " );
+			return "Debit amount exceeded account balance";
 		}
 		else
-		System.out.printf("subtracting %.2f from %s\n",money,name);
-			
+		{
+			this.balance = this.balance - balance;
+			System.out.print("subtracting "+balance+" from " );
+			return null;
+		}
 	}
 	
 	public void balance() // 계좌의 남은 잔액을 알려줌
 	{
-		if(money<0)
-		{
-			System.out.printf("%s balance: $%.2f\n",name,0.00);
-		}
-		else
-		System.out.printf("%s balance: $%.2f\n",name,money);
+			//System.out.printf("%.2lf",balance); // 왜 안될까?
+			System.out.println("$"+balance);
 	}
 	
-	public Account(double money, String name) // 초기 금액을 넣어주는 생성자
+	public Account(double balance) // 초기 금액을 넣어주는 생성자
 	{
-		this.money = money;
-		this.name = name;
+		this.balance = balance;
 	}
 
 }
