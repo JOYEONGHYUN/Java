@@ -20,7 +20,8 @@ public Car(String name,double price)
 
 	@Override
 	public String toString() {
-		return "car name" + name + "\n " + "initial price:"+price;
+		
+		return "Car name : " + name + "\n " + "initial price:"+price;
 	}
 	
 

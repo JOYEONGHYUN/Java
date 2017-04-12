@@ -18,7 +18,8 @@ public class Human implements Valuable {
 
 	@Override
 	public String toString() {	
-		return "car name" + name + "\n " + "registered age:"+age;
+		
+		return "Human name : " + name + "\n " + "registered age:"+age;
 }
 	
 }

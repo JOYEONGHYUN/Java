@@ -1,6 +1,7 @@
 public class SavingAccount extends Account{
 
 	private double interest;	 // 이자액     0.5
+	private double creditLimit = 50; // 한도액 
 	private int month = 0;
 	private int year = 1;
 	public SavingAccount(double balance, double interest) {
@@ -9,9 +10,16 @@ public class SavingAccount extends Account{
 	};
 		
 	@Override
-	public void debit(double amount){
+	public void debit(double amount)throws Exception1{
+		if(amount < 0) {
+			throw new Exception1("java.lang.Exception: 음수입력!");
+		}
+		else if(creditLimit < amount){
+			throw new Exception1("java.lang.Exception: Debit amount exceeded account balance.");
+		}
+		// 예외 상황 발생시 인출은 이루어지지 않는다.
 		
-		if(month < 12)
+		else if(month < 12)
 		{
 			System.out.println("아직 출금 할 수 없습니다.");
 		}
@@ -20,7 +28,7 @@ public class SavingAccount extends Account{
 		setBalance(getBalance()-amount);
 		}
 	}
-
+	
 	
 	
 	@Override

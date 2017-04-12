@@ -16,6 +16,7 @@ public class CheckingAccount implements Valuable{
 	
 	@Override
 	public String toString() {
+		
 		return "CheckingAccount_Balance:" + balance;
 	}
 
@@ -29,7 +30,7 @@ public class CheckingAccount implements Valuable{
 		this.loanInterest = loan_interest; // 마이너스 통장 이자
 	};
 	
-	public void debit(double amount){
+	public void debit(double amount) throws Exception{
 
 		setBalance(balance-amount);
 	}

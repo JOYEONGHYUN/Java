@@ -13,9 +13,19 @@ public class CheckingAccount extends Account{
 	};
 	
 	@Override
-	public void debit(double amount){
-
+	public void debit(double amount) throws Exception1{
+// 예외상황 발생시 인출은 이루어지지 않는다.
+		if(amount < 0) {
+			throw new Exception1("java.lang.Exception: 음수입력!");
+		}
+		else if(creditLimit < amount)
+			{
+			throw new Exception1("java.lang.Exception: Debit amount exceeded account balance.");
+			}
+		else
+		{
 		setBalance(getBalance()-amount);
+		}
 	}
 	
 	public String isBankrupt()

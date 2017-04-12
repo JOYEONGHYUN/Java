@@ -7,9 +7,9 @@ public abstract class Account {
 	public void credit(double amount){
 		balance = balance + amount; // °èÁÂ¿¡ µ·À» ³ÖÀ½ 
 	}
-	public void debit(double amount){		
+	public void debit(double amount) throws Exception1{		
 		
-			this.balance = this.balance - amount;
+			balance -=amount; //****
 	}
 	/** @brief °èÁÂÀÇ ³²Àº ÀÜ¾×À» ¾Ë·ÁÁÜ
 	 * @return ÀÜ¾×

@@ -22,10 +22,10 @@ public class Account {
 		}
 	}
 	
-	public void balance() // 계좌의 남은 잔액을 알려줌
+	public double balance() // 계좌의 남은 잔액을 알려줌
 	{
 			//System.out.printf("%.2lf",balance); // 왜 안될까?
-			System.out.println("$"+balance);
+			return balance;
 	}
 	
 	public Account(double balance) // 초기 금액을 넣어주는 생성자

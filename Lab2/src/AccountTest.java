@@ -12,11 +12,8 @@ public class AccountTest {
 		Account account1 = new Account(50.00);  // 참조자 생성  : Balance
 		Account account2 = new Account(0.00);  // 참조자 생성    : Balance
 		
-		System.out.print("account1 balance: ");
-		account1.balance(); // 계좌 내역 확인
-		System.out.print("account2 balance: ");
-		account2.balance(); // 계좌 내역 확인
-		System.out.print("\n");
+		System.out.printf("account1 balance: $ %.2lf\n",account1.balance()); // 계좌 내역 확인
+		System.out.printf("account2 balance: $ %.2lf\n",account2.balance());
 		
 		System.out.print("Enter withdrawal amount for account1: ");
 		debit = input.nextDouble(); // 출금할 금액 입력
@@ -31,10 +28,8 @@ public class AccountTest {
 			System.out.println("account1 balance");
 		}
 		
-		System.out.print("account1 balance: ");
-		account1.balance(); 
-		System.out.print("account2 balance: ");
-		account2.balance(); // 		
+		System.out.printf("account1 balance: $ %.2lf\n",account1.balance()); // 계좌 내역 확인
+		System.out.printf("account2 balance: $ %.2lf\n",account2.balance()); // 계좌 내역 확인
 		System.out.print("\n");
 		
 		System.out.print("Enter withdrawal amount for account2: ");
@@ -49,11 +44,8 @@ public class AccountTest {
 			System.out.println("account2 balance");
 		}
 		
-		System.out.print("account1 balance: ");
-		account1.balance();
-		System.out.print("account2 balance: ");
-		account2.balance();
-		
+		System.out.printf("account1 balance: $ %.2lf\n",account1.balance()); // 계좌 내역 확인
+		System.out.printf("account2 balance: $ %.2lf\n",account2.balance()); // 계좌 내역 확인
 
 		input.close(); // 사용이 완료된 리소스를 메모리에서 소멸시켜준다. Scanner 다썼으니까 참조자로 쓴 리소스 소멸시켜줌
 	}
